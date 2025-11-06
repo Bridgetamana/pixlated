@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grainy Image Web Component</title>
+    <style>
+        body {
+            background-color: #f4f4f4;
+            color: #333;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        h1 {
+            color: #2c3e50;
+            margin-bottom: 40px;
+        }
+        .container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            width: 100%;
+            max-width: 1200px;
+        }
+        .card {
+            background-color: #fff;
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+        }
+        .card h2 {
+            margin-top: 0;
+            color: #34495e;
+        }
+        pixlated-image {
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>pixlated Image Effects</h1>
+
+    <div class="container">
+        <div class="card">
+            <h2>Default Grain (0.1)</h2>
+            <pixlated-image 
+                src="/images/annie.jpg" 
+                intensity="0.1" 
+                width="300" 
+                height="300"
+                alt="">
+            </pixlated-image>
+            <p>A subtle grainy effect.</p>
+        </div>
+    </div>
+
+    <script src="/src/pixlated.js"></script>
+</body>
+</html>
