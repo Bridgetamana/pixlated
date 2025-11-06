@@ -117,4 +117,20 @@ class PixlatedImage extends HTMLElement {
             this.canvas.removeAttribute('aria-label');
         }
     }
+
+    reload() {
+        this.drawGrainyImage();
+    }
+
+    getConfig() {
+        return {
+            src: this.getAttribute('src'),
+            intensity: parseFloat(this.getAttribute('intensity')) || 0.1,
+            width: parseInt(this.getAttribute('width'), 10) || 300,
+            height: parseInt(this.getAttribute('height'), 10) || 200,
+            alt: this.altText
+        };
+    }
 }
+
+customElements.define('pixlated-image', PixlatedImage);
