@@ -1,64 +1,186 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Grainy Image Web Component</title>
-    <style>
-        body {
-            background-color: #f4f4f4;
-            color: #333;
-            padding: 20px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        h1 {
-            color: #2c3e50;
-            margin-bottom: 40px;
-        }
-        .container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-            width: 100%;
-            max-width: 1200px;
-        }
-        .card {
-            background-color: #fff;
-            border-radius: 8px;
-            padding: 20px;
-            text-align: center;
-        }
-        .card h2 {
-            margin-top: 0;
-            color: #34495e;
-        }
-        pixlated-image {
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            margin-bottom: 15px;
-        }
-    </style>
-</head>
-<body>
-
-    <h1>pixlated Image Effects</h1>
-
-    <div class="container">
-        <div class="card">
-            <h2>Default Grain (0.1)</h2>
-            <pixlated-image 
-                src="/images/annie.jpg" 
-                intensity="0.1" 
-                width="300" 
-                height="300"
-                alt="">
-            </pixlated-image>
-            <p>A subtle grainy effect.</p>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>pixlated - Beautiful Grain Effects for Images</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <span class="top-header">
+        <a href="https://github.com/Bridgetamana/pixlated" class="github-link">
+          <svg
+            width="15"
+            height="15"
+            viewBox="0 0 15 15"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M7.49933 0.25C3.49635 0.25 0.25 3.49593 0.25 7.50024C0.25 10.703 2.32715 13.4206 5.2081 14.3797C5.57084 14.446 5.70302 14.2222 5.70302 14.0299C5.70302 13.8576 5.69679 13.4019 5.69323 12.797C3.67661 13.235 3.25112 11.825 3.25112 11.825C2.92132 10.9874 2.44599 10.7644 2.44599 10.7644C1.78773 10.3149 2.49584 10.3238 2.49584 10.3238C3.22353 10.375 3.60629 11.0711 3.60629 11.0711C4.25298 12.1788 5.30335 11.8588 5.71638 11.6732C5.78225 11.205 5.96962 10.8854 6.17658 10.7043C4.56675 10.5209 2.87415 9.89918 2.87415 7.12104C2.87415 6.32925 3.15677 5.68257 3.62053 5.17563C3.54576 4.99226 3.29697 4.25521 3.69174 3.25691C3.69174 3.25691 4.30015 3.06196 5.68522 3.99973C6.26337 3.83906 6.8838 3.75895 7.50022 3.75583C8.1162 3.75895 8.73619 3.83906 9.31523 3.99973C10.6994 3.06196 11.3069 3.25691 11.3069 3.25691C11.7026 4.25521 11.4538 4.99226 11.3795 5.17563C11.8441 5.68257 12.1245 6.32925 12.1245 7.12104C12.1245 9.9063 10.4292 10.5192 8.81452 10.6985C9.07444 10.9224 9.30633 11.3648 9.30633 12.0413C9.30633 13.0102 9.29742 13.7922 9.29742 14.0299C9.29742 14.2239 9.42828 14.4496 9.79591 14.3788C12.6746 13.4179 14.75 10.7025 14.75 7.50024C14.75 3.49593 11.5036 0.25 7.49933 0.25Z"
+              fill="currentColor"
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+          Give us a Star
+        </a>
+      </span>
+      <div class="bottom-header">
+        <span class="page-title">
+          <h1>pixlated</h1>
+          <div class="theme-btn">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              width="24"
+              height="24"
+              color="currentColor"
+              fill="none"
+            >
+              <path
+                d="M21.5 14.0784C20.3003 14.7189 18.9301 15.0821 17.4751 15.0821C12.7491 15.0821 8.91792 11.2509 8.91792 6.52485C8.91792 5.06986 9.28105 3.69968 9.92163 2.5C5.66765 3.49698 2.5 7.31513 2.5 11.8731C2.5 17.1899 6.8101 21.5 12.1269 21.5C16.6849 21.5 20.503 18.3324 21.5 14.0784Z"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              width="24"
+              height="24"
+              color="currentColor"
+              fill="none"
+            >
+              <path
+                d="M21.5 14.0784C20.3003 14.7189 18.9301 15.0821 17.4751 15.0821C12.7491 15.0821 8.91792 11.2509 8.91792 6.52485C8.91792 5.06986 9.28105 3.69968 9.92163 2.5C5.66765 3.49698 2.5 7.31513 2.5 11.8731C2.5 17.1899 6.8101 21.5 12.1269 21.5C16.6849 21.5 20.503 18.3324 21.5 14.0784Z"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </div>
+        </span>
+        <div class="description-container">
+          <p class="tagline">Beautiful grain effects for your images</p>
+          <div class="badges">
+            <span class="badge">Zero Dependencies</span>
+            <span class="badge">Lightweight</span>
+            <span class="badge">Performant</span>
+            <span class="badge">Accessible</span>
+          </div>
         </div>
+      </div>
+    </header>
+    <div class="container">
+      <div class="playground">
+        <h2>Interactive Playground</h2>
+        <div class="demo-controls">
+          <div class="image-display">
+            <pixlated-image
+              id="demoImage"
+              src="/images/annie.jpg"
+              intensity="0.3"
+              width="400"
+              height="400"
+              alt="Demo image with adjustable grain effect"
+            >
+            </pixlated-image>
+          </div>
+          <div class="control-group">
+            <label> Intensity </label>
+            <input
+              type="range"
+              id="intensitySlider"
+              min="0"
+              max="1"
+              step="0.05"
+              value="0.3"
+            />
+            <span class="value-display" id="intensityValue">0.3</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="examples">
+        <div class="example-card">
+          <h3>Subtle Grain</h3>
+          <p>
+            Perfect for modern, clean designs. Adds texture without
+            overwhelming.
+          </p>
+          <pixlated-image
+            src="/images/annie.jpg"
+            intensity="0.1"
+            width="300"
+            height="300"
+            alt="Subtle grain example"
+          >
+          </pixlated-image>
+        </div>
+
+        <div class="example-card">
+          <h3>Film Look</h3>
+          <p>Classic analog film aesthetic with balanced grain.</p>
+          <pixlated-image
+            src="/images/annie.jpg"
+            intensity="0.4"
+            width="300"
+            height="300"
+            alt="Film grain example"
+          >
+          </pixlated-image>
+        </div>
+
+        <div class="example-card">
+          <h3>Heavy Texture</h3>
+          <p>Bold, artistic grain for dramatic effects.</p>
+          <pixlated-image
+            src="/images/annie.jpg"
+            intensity="0.7"
+            width="300"
+            height="300"
+            alt="Heavy grain example"
+          >
+          </pixlated-image>
+        </div>
+      </div>
+
+      <footer>
+        <p>
+          Made with ❤️ by
+          <a href="https://github.com/Bridgetamana" target="_blank"
+            >Bridget Amana</a
+          >
+        </p>
+        <p style="margin-top: 10px; opacity: 0.8">
+          <a href="https://github.com/Bridgetamana/pixlated" target="_blank"
+            >View on GitHub</a
+          >
+          ·
+          <a
+            href="https://github.com/Bridgetamana/pixlated/blob/main/README.md"
+            target="_blank"
+            >Documentation</a
+          >
+        </p>
+      </footer>
     </div>
 
     <script src="/src/pixlated.js"></script>
-</body>
+    <script>
+      const demoImage = document.getElementById("demoImage");
+      const intensitySlider = document.getElementById("intensitySlider");
+      const intensityValue = document.getElementById("intensityValue");
+      intensitySlider.addEventListener("input", (e) => {
+        const value = e.target.value;
+        intensityValue.textContent = value;
+        demoImage.setAttribute("intensity", value);
+      });
+    </script>
+  </body>
 </html>

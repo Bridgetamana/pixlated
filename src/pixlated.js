@@ -52,12 +52,18 @@ class PixlatedImage extends HTMLElement {
                 break;
             case 'width':
                 const width = this._validateDimension(newValue, 400, 'width');
-                this.canvas.width = width;
+                const dpr = window.devicePixelRatio || 1;
+                this.canvas.width = width * dpr;
+                this.canvas.style.width = `${width}px`;
+                this.ctx.scale(dpr, dpr);
                 if (this.isConnected) this.drawGrainyImage();
                 break;
             case 'height':
                 const height = this._validateDimension(newValue, 400, 'height');
-                this.canvas.height = height;
+                const dprH = window.devicePixelRatio || 1;
+                this.canvas.height = height * dprH;
+                this.canvas.style.height = `${height}px`;
+                this.ctx.scale(dprH, dprH);
                 if (this.isConnected) this.drawGrainyImage();
                 break;
             case 'alt':
@@ -68,10 +74,15 @@ class PixlatedImage extends HTMLElement {
     }
 
     connectedCallback() {
-        const width = this._validateDimension(this.getAttribute('width'), 300, 'width');
+        const width = this._validateDimension(this.getAttribute('width'), 400, 'width');
         const height = this._validateDimension(this.getAttribute('height'), 400, 'height');
-        this.canvas.width = width;
-        this.canvas.height = height;
+
+        const dpr = window.devicePixelRatio || 1;
+        this.canvas.width = width * dpr;
+        this.canvas.height = height * dpr;
+        this.canvas.style.width = `${width}px`;
+        this.canvas.style.height = `${height}px`;
+        this.ctx.scale(dpr, dpr);
 
         this.altText = this.getAttribute('alt') || '';
         this.updateAriaAttributes();
