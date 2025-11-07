@@ -5,14 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Pixlated is a lightweight web component for creating grainy/noisy image effects using Canvas or CSS. "
+      content="Lightweight web components that add film grain and noise textures to images and backgrounds using Canvas API."
     />
     <meta name="application-name" content="pixlated" />
     <meta name="apple-mobile-web-app-title" content="pixlated" />
     <meta property="og:title" content="pixlated" />
     <meta
       property="og:description"
-      content="A lightweight web component for creating grainy/noisy image effects using Canvas or CSS."
+      content="Lightweight web components that add film grain and noise textures to images and backgrounds using Canvas API."
     />
     <meta
       property="og:url"
@@ -20,7 +20,10 @@
     />
     <meta property="og:site_name" content="pixlated" />
     <meta property="og:locale" content="en_US" />
-    <meta property="og:image" content="/assets/images/opengraph-image.png" />
+    <meta
+      property="og:image"
+      content="https://bridgetamana.github.io/pixlated/assets/images/opengraph-image.png"
+    />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="700" />
     <meta property="og:type" content="website" />
@@ -29,16 +32,19 @@
     <meta name="twitter:title" content="pixlated" />
     <meta
       name="twitter:description"
-      content="A lightweight web component for creating grainy/noisy image effects using Canvas or CSS."
+      content="Lightweight web components that add film grain and noise textures to images and backgrounds using Canvas API."
     />
-    <meta name="twitter:image" content="/assets/images/opengraph-image.png" />
+    <meta
+      name="twitter:image"
+      content="https://bridgetamana.github.io/pixlated/assets/images/opengraph-image.png"
+    />
     <meta name="twitter:image:width" content="1200" />
     <meta name="twitter:image:height" content="700" />
-    <title>pixlated - Beautiful Grain Effects for Images</title>
+    <title>pixlated - Film Grain & Noise Texture Web Components</title>
     <link rel="stylesheet" href="style.css" />
     <link
       rel="shortcut icon"
-      href="/assets/images/favicon.ico"
+      href="./assets/images/favicon.ico"
       type="image/x-icon"
     />
   </head>
@@ -131,7 +137,7 @@
           <div class="image-display">
             <pixlated-image
               id="demoImage"
-              src="/assets/images/annie.jpg"
+              src="./assets/images/annie.jpg"
               intensity="0.3"
               width="400"
               height="400"
@@ -217,7 +223,7 @@
             overwhelming.
           </p>
           <pixlated-image
-            src="/assets/images/moutains.jpg"
+            src="./assets/images/moutains.jpg"
             intensity="0.1"
             width="300"
             height="300"
@@ -230,7 +236,7 @@
           <h3>Film Look</h3>
           <p>Classic analog film aesthetic with balanced grain.</p>
           <pixlated-image
-            src="/assets/images/bus.jpg"
+            src="./assets/images/bus.jpg"
             intensity="0.4"
             width="300"
             height="300"
@@ -243,7 +249,7 @@
           <h3>Heavy Texture</h3>
           <p>Bold, artistic grain for dramatic effects.</p>
           <pixlated-image
-            src="/assets/images/couples-kissing.jpg"
+            src="./assets/images/couples-kissing.jpg"
             intensity="0.7"
             width="300"
             height="300"
@@ -268,8 +274,8 @@
       </footer>
     </div>
 
-    <script type="module" src="/src/pixlated.js"></script>
-    <script type="module" src="/src/pixlated-bg.js"></script>
+    <script type="module" src="./src/pixlated.js"></script>
+    <script type="module" src="./src/pixlated-bg.js"></script>
     <script>
       const demoImage = document.getElementById("demoImage");
       const demoBg = document.getElementById("demoBg");

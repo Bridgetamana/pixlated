@@ -1,34 +1,45 @@
 {
   "name": "pixlated",
-  "description": "A lightweight web component for creating grainy/noisy image effects using Canvas or CSS.",
+  "description": "Lightweight web components that add film grain and noise textures to images and backgrounds using Canvas API",
   "version": "1.0.0",
-  "homepage": "https://github.com/Bridgetamana/pixlated#readme",
+  "homepage": "https://bridgetamana.github.io/pixlated/",
   "main": "src/pixlated.js",
   "module": "src/pixlated.js",
   "type": "module",
+  "exports": {
+    ".": "./src/pixlated.js",
+    "./pixlated-image": "./src/pixlated.js",
+    "./pixlated-bg": "./src/pixlated-bg.js",
+    "./utils/noise": "./src/utils/noise.js"
+  },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Bridgetamana/pixalated.git"
+    "url": "git+https://github.com/Bridgetamana/pixlated.git"
   },
   "bugs": {
-    "url": "https://github.com/Bridgetamana/pixalated/issues"
+    "url": "https://github.com/Bridgetamana/pixlated/issues"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "files": [
     "src/pixlated.js",
+    "src/pixlated-bg.js",
+    "src/utils/noise.js",
     "README.md",
     "LICENSE"
   ],
   "keywords": [
-    "web-component",
+    "web-components",
     "grain",
     "noise",
-    "image-effect",
-    "pixlated",
+    "texture",
+    "film-grain",
     "canvas",
-    "lightweight"
+    "pixlated",
+    "custom-elements",
+    "background-noise",
+    "image-effects"
   ],
   "author": "Bridget Amana",
   "license": "Apache-2.0"
