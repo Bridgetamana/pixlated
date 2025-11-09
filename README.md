@@ -34,6 +34,12 @@ npm install pixlated
 
 ## Usage
 
+Before
+![Project Screenshot](./assets/images/annie.jpg)
+
+After
+![Project Screenshot](./assets/images/annie-grained.PNG)
+
 ### Image Grain Effect
 
 Add noise texture to images:
