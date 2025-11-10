@@ -1,5 +1,8 @@
 # pixlated
 
+![Contributors](https://img.shields.io/github/contributors/Bridgetamana/pixlated.svg?style=flat)
+![NPM Downloads](https://img.shields.io/npm/dw/pixlated?style=flat)
+![Repo Stars](https://img.shields.io/github/stars/Bridgetamana/pixlated?style=flat)
 ![NPM Version](https://img.shields.io/npm/v/pixlated?style=flat)
 ![npm bundle size](https://img.shields.io/bundlephobia/min/pixlated)
 
