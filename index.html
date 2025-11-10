@@ -160,7 +160,10 @@
             <span class="value-display" id="intensityValue">0.3</span>
           </div>
           <div class="code-example">
-            <pre><code>&lt;pixlated-image
+            <button class="copy" type="button" title="Copy" data-for="pixlated-image">
+              Copy
+            </button>
+            <pre><code id="pixlated-image">&lt;pixlated-image
   src="photo.jpg"
   intensity="0.3"
   width="400"
@@ -206,7 +209,10 @@
             <span class="value-display" id="bgIntensityValue">0.15</span>
           </div>
           <div class="code-example">
-            <pre><code>&lt;pixlated-bg
+            <button class="copy" type="button" title="Copy" data-for="pixlated-bg">
+              Copy
+            </button>
+            <pre><code id="pixlated-bg">&lt;pixlated-bg
   intensity="0.15"
   color="#09090b"
 &gt;
@@ -287,6 +293,7 @@
       const intensityValue = document.getElementById("intensityValue");
       const bgIntensitySlider = document.getElementById("bgIntensitySlider");
       const bgIntensityValue = document.getElementById("bgIntensityValue");
+      const copyBtns = document.querySelectorAll("button.copy");
 
       const loadTheme = () => {
         const savedTheme = localStorage.getItem("theme");
@@ -322,6 +329,27 @@
         document.body.classList.add("dark");
         saveTheme(true);
       });
+      
+      copyBtns.forEach((copyBtn) => {
+        copyBtn.addEventListener("click", (e) => {
+          const btn = e.target;
+          if (btn.disabled) {
+            return;
+          }
+
+          // retrieve code element and copy content to clipboard
+          const code = document.querySelector(`#${btn.dataset.for}`);
+          navigator.clipboard.writeText(code.textContent);
+
+          // Let the user know that the content is copied
+          btn.disabled = true;
+          btn.textContent = "Copied!";
+          setTimeout(() => {
+            btn.textContent = "Copy";
+            btn.disabled = false;
+          }, 400);
+        })
+      })
     </script>
   </body>
 </html>
