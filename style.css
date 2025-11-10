@@ -365,14 +365,14 @@
   }
 
   .demo-bg-title {
-    color: var(--foreground);
+    color: #ededee;
     margin-bottom: var(--spacing-sm);
     font-size: 1.25rem;
     font-weight: 600;
   }
 
   .demo-bg-text {
-    color: var(--foreground-muted);
+    color: #ededee;
     max-width: 500px;
   }
 }
