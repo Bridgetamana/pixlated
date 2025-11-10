@@ -160,19 +160,21 @@
             <span class="value-display" id="intensityValue">0.3</span>
           </div>
           <div class="code-example">
+            <button class="copy-btn">Copy</button>
             <pre><code>&lt;pixlated-image
-  src="photo.jpg"
-  intensity="0.3"
-  width="400"
-  height="400"
-  alt="Description"
-&gt;
-&lt;/pixlated-image&gt;</code></pre>
+            src="photo.jpg"
+            intensity="0.3"
+            width="400"
+            height="400"
+            alt="Description"
+          &gt;
+          &lt;/pixlated-image&gt;</code></pre>
           </div>
         </div>
       </div>
 
       <div class="playground">
+        <button class="copy-btn">Copy</button>
         <h2>pixlated-bg</h2>
         <p class="playground-description">
           Add noise texture to background elements
@@ -322,6 +324,24 @@
         document.body.classList.add("dark");
         saveTheme(true);
       });
-    </script>
+  //  New Copy Button Functionality
+  document.querySelectorAll('.code-example').forEach(block => {
+    const button = block.querySelector('.copy-btn');
+    const code = block.querySelector('code');
+
+    button.addEventListener('click', async () => {
+      const text = code.innerText;
+      try {
+        await navigator.clipboard.writeText(text);
+        button.textContent = 'Copied!';
+        setTimeout(() => (button.textContent = 'Copy'), 1500);
+      } catch (err) {
+        console.error('Failed to copy: ', err);
+        button.textContent = 'Error';
+      }
+    });
+  });
+
+  </script>
   </body>
 </html>
