@@ -1,9 +1,9 @@
 # pixlated
 
 [![NPM Version](https://img.shields.io/npm/v/pixlated?style=flat)](https://www.npmjs.com/package/pixlated)
-![Contributors](https://img.shields.io/github/contributors/Bridgetamana/pixlated.svg?style=flat)
+[![Contributors](https://img.shields.io/github/contributors/Bridgetamana/pixlated.svg?style=flat)](https://github.com/Bridgetamana/pixlated/graphs/contributors)
 ![NPM Downloads](https://img.shields.io/npm/dw/pixlated?style=flat)
-![Repo Stars](https://img.shields.io/github/stars/Bridgetamana/pixlated?style=flat)
+[![Repo Stars](https://img.shields.io/github/stars/Bridgetamana/pixlated?style=flat)](https://github.com/Bridgetamana/pixlated/stargazers)
 ![npm bundle size](https://img.shields.io/bundlephobia/min/pixlated)
 
 A lightweight web components that add film grain and noise textures to images and backgrounds using Canvas API.
