@@ -114,6 +114,7 @@ License under [Apache-2.0](LICENSE)
 
 ## Links
 
-- [Documentation](https://github.com/Bridgetamana/pixlated/blob/main/README.md)
 - [Issues](https://github.com/Bridgetamana/pixlated/issues)
 - [NPM Package](https://www.npmjs.com/package/pixlated)
+
+Give the repo a star if you haven't already
