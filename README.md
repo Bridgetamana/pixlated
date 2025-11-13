@@ -54,11 +54,13 @@ Add noise texture to images:
 
 **Attributes:**
 
-- `src` (required) - Image URL
-- `intensity` (optional) - Noise intensity from 0 to 1 (default: 0.1)
-- `width` (optional) - Canvas width in pixels (default: 400)
-- `height` (optional) - Canvas height in pixels (default: 400)
-- `alt` (optional) - Alternative text for accessibility
+| Attribute | Type | Default | Description |
+|-----------|------|---------|-------------|
+| `src` | string | required | Image URL|
+| `intensity` | float | 0.1 | Noise intensity from 0 to 1 |
+| `width` | int | 400 | Canvas width in pixels |
+| `height` | int | 400 | Canvas height in pixels |
+| `alt` | string | optional | Alternative text for accessibility |
 
 ### Background Noise Effect
 
