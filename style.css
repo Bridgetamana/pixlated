@@ -146,14 +146,17 @@
     color: var(--foreground-muted);
   }
 
-  .playground {
+  .card-base {
+    background: var(--card-color);
     border: 1px solid var(--border-color);
     border-radius: var(--radius-md);
     padding: var(--spacing-md);
+  }
+
+  .playground {
     margin-bottom: var(--spacing-xl);
     max-width: 900px;
     margin-inline: auto;
-    background-color: var(--card-color);
   }
 
   .playground h2 {
@@ -297,10 +300,6 @@
   }
 
   .example-card {
-    background: var(--card-color);
-    border: 1px solid var(--border-color);
-    border-radius: var(--radius-md);
-    padding: var(--spacing-md);
     transition: border-color 0.2s ease;
   }
 
@@ -334,7 +333,6 @@
     color: var(--foreground);
   }
 }
-
 @layer theme {
   .theme-btn {
     position: relative;
