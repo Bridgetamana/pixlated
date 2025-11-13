@@ -8,5 +8,6 @@ List the number of any relevent issues or tasks (e.g., `Closes #123`, `Fixes #45
 
 ## Changes Made
 
-*   List the key code changes in this pull request.
-*   Explain the reasoning behind significant changes.
+List the key code changes in this pull request.
+
+-
