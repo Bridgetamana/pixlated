@@ -3,7 +3,8 @@
   "description": "Lightweight web components that add film grain and noise textures to images and backgrounds using Canvas API",
   "version": "2.0.0",
   "homepage": "https://pixlated.bridgetamana.tech/",
-  "main": "src/pixlated.js",
+  "main": "dist/pixlated.js",
+  "types": "dist/pixlated.d.ts",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Bridgetamana/pixlated.git"
@@ -12,11 +13,14 @@
     "url": "https://github.com/Bridgetamana/pixlated/issues"
   },
   "scripts": {
+    "build": "tsc",
+    "prepublishOnly": "npm run build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "files": [
-    "src/pixlated.js",
-    "src/pixlated-bg.js",
+    "dist/**/*.js",
+    "dist/**/*.d.ts",
+    "dist/**/*.js.map",
     "README.md",
     "LICENSE",
     "CONTRIBUTING.md"
@@ -31,8 +35,12 @@
     "pixlated",
     "custom-elements",
     "background-noise",
-    "image-effects"
+    "image-effects",
+    "typescript"
   ],
   "author": "Bridget Amana",
-  "license": "Apache-2.0"
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "typescript": "^5.9.3"
+  }
 }
