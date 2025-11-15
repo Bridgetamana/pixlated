@@ -3,7 +3,7 @@
  * Adds film grain and noise textures to backgrounds using Canvas API
  */
 
-function applyNoiseToImage(imageData, intensity) {
+function applyNoiseToBg(imageData, intensity) {
     const data = imageData.data;
     const clampedIntensity = Math.max(0, Math.min(1, intensity));
 
@@ -17,7 +17,7 @@ function applyNoiseToImage(imageData, intensity) {
     return imageData;
 }
 
-function clampImageIntensity(value, defaultValue) {
+function clampBgIntensity(value, defaultValue) {
     if (defaultValue === undefined) defaultValue = 0.1;
     if (value === null || value === undefined || isNaN(value)) {
         return defaultValue;
@@ -136,7 +136,7 @@ class PixlatedBg extends HTMLElement {
 
         const color = this.getAttribute('color') || '#09090b';
         const rawIntensity = parseFloat(this.getAttribute('intensity'));
-        const intensity = clampImageIntensity(rawIntensity, 0.1);
+        const intensity = clampBgIntensity(rawIntensity, 0.1);
 
         const canvasWidth = this.canvas.width;
         const canvasHeight = this.canvas.height;
@@ -146,7 +146,7 @@ class PixlatedBg extends HTMLElement {
 
         if (intensity > 0) {
             const imageData = this.ctx.getImageData(0, 0, canvasWidth, canvasHeight);
-            const noisyData = applyNoiseToImage(imageData, intensity);
+            const noisyData = applyNoiseToBg(imageData, intensity);
             this.ctx.putImageData(noisyData, 0, 0);
         }
     }
