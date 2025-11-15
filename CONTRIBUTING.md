@@ -1,6 +1,6 @@
 # Contributing to pixlated
 
-Thanks for your Interest in contributing to Pixlated
+Thanks for your Interest in contributing to Pixlated.
 Please take a moment to review this document before submitting your pull request(PR). Before taking on an issue, check open pull request to ensure no one is working on it.  
 
 ## How to Contribute

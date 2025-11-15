@@ -342,7 +342,8 @@
     height: 32px;
   }
 
-  .theme-btn svg {
+  /* Buttons now wrap the SVGs: style the button and svg appropriately */
+  .theme-btn .theme-toggle {
     position: absolute;
     top: 0;
     left: 0;
@@ -352,29 +353,45 @@
     border-radius: var(--radius-lg);
     background-color: var(--card-color);
     border: 1px solid var(--border-color);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
   }
 
-  .theme-btn svg:hover {
+  .theme-btn .theme-toggle:hover {
     background-color: var(--card-color-darker);
   }
 
-  #dark-toggle {
+  .theme-btn .theme-toggle svg {
+    color: var(--foreground);
+  }
+
+  /* Visible/hidden toggle buttons (IDs are now on the buttons) */
+  .theme-btn #dark-toggle {
     opacity: 0;
     pointer-events: none;
   }
 
-  body.dark #dark-toggle {
+  body.dark .theme-btn #dark-toggle {
     opacity: 1;
     pointer-events: auto;
   }
 
-  body.dark #light-toggle {
+  body.dark .theme-btn #light-toggle {
     opacity: 0;
     pointer-events: none;
   }
 
-  .theme-btn svg.rotate {
+  /* Rotation helper: cover svg.rotate inside button or rotate button itself */
+  .theme-btn .theme-toggle svg.rotate,
+  .theme-btn .theme-toggle.rotate svg {
     transform: rotate(360deg);
+  }
+
+  /* Keyboard focus for accessibility */
+  .theme-btn .theme-toggle:focus-visible {
+    outline: 2px solid var(--foreground);
+    outline-offset: 2px;
   }
 
   .demo-bg {
