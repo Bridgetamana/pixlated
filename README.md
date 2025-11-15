@@ -14,6 +14,7 @@ A lightweight web components that add film grain and noise textures to images an
 - Two web components: `<pixlated-image>` and `<pixlated-bg>`
 - Zero dependencies
 - Built with native Web Components API
+- Written in TypeScript with full type definitions
 - High-performance Canvas rendering
 - Responsive and accessible
 
@@ -29,18 +30,18 @@ npm install pixlated
 
 ```html
 <!-- Load both components -->
-<script src="https://unpkg.com/pixlated/src/pixlated.js"></script>
-<script src="https://unpkg.com/pixlated/src/pixlated-bg.js"></script>
+<script src="https://unpkg.com/pixlated/dist/pixlated.js"></script>
+<script src="https://unpkg.com/pixlated/dist/pixlated-bg.js"></script>
 ```
 
 Or load individually:
 
 ```html
 <!-- Just image component -->
-<script src="https://unpkg.com/pixlated/src/pixlated.js"></script>
+<script src="https://unpkg.com/pixlated/dist/pixlated.js"></script>
 
 <!-- Or just background component -->
-<script src="https://unpkg.com/pixlated/src/pixlated-bg.js"></script>
+<script src="https://unpkg.com/pixlated/dist/pixlated-bg.js"></script>
 ```
 
 ## Usage
@@ -52,11 +53,26 @@ import 'pixlated';
 // Now you can use <pixlated-image> in your HTML
 ```
 
+### TypeScript
+
+The package includes full TypeScript definitions:
+
+```typescript
+import 'pixlated';
+
+// Type definitions are automatically available
+const image = document.querySelector('pixlated-image');
+if (image) {
+  const config = image.getConfig();
+  console.log(config.intensity);
+}
+```
+
 ### Plain HTML (No Bundler)
 
 ```html
 
-<script src="./node_modules/pixlated/src/pixlated.js"></script>
+<script src="./node_modules/pixlated/dist/pixlated.js"></script>
 ```
 
 ### Using the Components
