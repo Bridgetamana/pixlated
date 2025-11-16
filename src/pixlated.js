@@ -164,7 +164,7 @@ class PixlatedImage extends HTMLElement {
         }
 
         const rawIntensity = parseFloat(this.getAttribute('intensity'));
-        const intensity = clampIntensity(rawIntensity, 0.1);
+        const intensity = clampImageIntensity(rawIntensity, 0.1);
         const canvasWidth = this.canvas.width;
         const canvasHeight = this.canvas.height;
 
