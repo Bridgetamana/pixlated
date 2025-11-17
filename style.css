@@ -25,6 +25,15 @@
     --radius-sm: 8px;
     --radius-md: 12px;
     --radius-lg: 24px;
+
+    --text-xs: 0.75rem;
+    --text-sm: 0.85rem;
+    --text-base: 1rem;
+    --text-lg: 1.125rem;
+    --text-xl: 1.25rem;
+    --text-2xl: 1.5rem;
+    --text-3xl: 1.75rem;
+    --text-4xl: 2.125rem;
   }
 
   .dark {
@@ -56,7 +65,7 @@
     background-color: var(--background);
     color: var(--foreground);
     min-height: 100vh;
-    font-size: 1rem;
+    font-size: var(--text-base);
     line-height: 1.5;
     transition: background-color 0.3s ease-in-out, color 0.2s ease-in-out;
   }
@@ -89,7 +98,7 @@
     gap: var(--spacing-xs);
     border-bottom: 1px solid #ededed;
     color: #ededee;
-    font-size: 0.75rem;
+    font-size: var(--text-xs);
   }
 
   .top-header a:hover {
@@ -121,7 +130,7 @@
   }
 
   h1 {
-    font-size: clamp(1.75rem, 4vw, 2.125rem);
+    font-size: clamp(var(--text-3xl), 4vw, var(--text-4xl));
     font-weight: 700;
   }
 
@@ -142,7 +151,7 @@
     border: 1px solid var(--border-color);
     padding: 0.125rem 0.5rem;
     border-radius: var(--radius-lg);
-    font-size: 0.75rem;
+    font-size: var(--text-xs);
     color: var(--foreground-muted);
   }
 
@@ -160,7 +169,7 @@
   }
 
   .playground h2 {
-    font-size: 1.125rem;
+    font-size: var(--text-lg);
     font-weight: 600;
     margin-bottom: var(--spacing-xs);
     color: var(--foreground);
@@ -193,7 +202,7 @@
     top: 5px;
     cursor: pointer;
     padding: 4px 5px;
-    font-size: 0.75rem;
+    font-size: var(--text-xs);
   }
 
   .code-example pre {
@@ -224,7 +233,7 @@
   label {
     display: block;
     color: var(--foreground-muted);
-    font-size: 0.85rem;
+    font-size: var(--text-sm);
     position: absolute;
     left: 12px;
     top: 7px;
@@ -271,7 +280,7 @@
   .value-display {
     color: var(--foreground-muted);
     font-weight: 600;
-    font-size: 0.85rem;
+    font-size: var(--text-sm);
     position: absolute;
     right: 12px;
     top: 7px;
@@ -310,13 +319,13 @@
   .example-card h3 {
     margin-bottom: var(--spacing-sm);
     color: var(--foreground);
-    font-size: 1rem;
+    font-size: var(--text-base);
   }
 
   .example-card p {
     color: var(--foreground-muted);
     margin-bottom: var(--spacing-md);
-    font-size: 0.85rem;
+    font-size: var(--text-sm);
   }
 
   footer {
@@ -326,7 +335,7 @@
     padding-top: var(--spacing-lg);
     border-top: 1px solid var(--border-color);
     padding-bottom: var(--spacing-lg);
-    font-size: 0.85rem;
+    font-size: var(--text-sm);
   }
 
   footer a:hover {
@@ -402,7 +411,7 @@
 
   .demo-bg-title {
     margin-bottom: var(--spacing-sm);
-    font-size: 1.25rem;
+    font-size: var(--text-xl);
     font-weight: 600;
   }
 
@@ -417,7 +426,7 @@
   }
 
   .page-title h1 {
-    font-size: 1.5rem;
+    font-size: var(--text-2xl);
   }
 
   .container {
@@ -433,6 +442,7 @@
   }
 
   .code-example pre {
-    font-size: 0.75rem;
+    font-size: var(--text-xs);
   }
 }
+
