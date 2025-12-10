@@ -5,8 +5,20 @@
 [![NPM Downloads](https://img.shields.io/npm/dw/pixlated?style=flat)]((https://www.npmjs.com/package/pixlated))
 [![Repo Stars](https://img.shields.io/github/stars/Bridgetamana/pixlated?style=flat)](https://github.com/Bridgetamana/pixlated/stargazers)
 
-A lightweight web components that add film grain and noise textures to images and backgrounds using Canvas API.
+A lightweight web components that add noise textures to images and backgrounds using Canvas API.
 [View Live Demo](https://bridgetamana.github.io/pixlated/)
+
+[NPM Package](https://www.npmjs.com/package/pixlated)
+
+## Effect Preview
+
+See the subtle noise effect `pixlated` adds to an image.
+
+Before (Original)
+![Original image without grain effect](./assets/images/annie.webp)
+
+After (With `<pixlated-image>`)
+![Image with pixlated grain effect applied](./assets/images/annie-pixlated.webp)
 
 ## Features
 
@@ -26,8 +38,9 @@ npm install pixlated
 
 ### CDN
 
+Load both components
+
 ```html
-<!-- Load both components -->
 <script src="https://unpkg.com/pixlated/src/pixlated.js"></script>
 <script src="https://unpkg.com/pixlated/src/pixlated-bg.js"></script>
 ```
@@ -37,8 +50,10 @@ Or load individually:
 ```html
 <!-- Just image component -->
 <script src="https://unpkg.com/pixlated/src/pixlated.js"></script>
+```
 
-<!-- Or just background component -->
+```html
+<!-- Just background component -->
 <script src="https://unpkg.com/pixlated/src/pixlated-bg.js"></script>
 ```
 
@@ -58,18 +73,6 @@ import 'pixlated';
 <script src="./node_modules/pixlated/src/pixlated.js"></script>
 ```
 
-### Using the Components
-
-## Effect Preview
-
-See the subtle, high-performance film grain effect `pixlated` adds to an image.
-
-<!-- markdownlint-disable MD033 -->
-| Before (Original) | After (With `<pixlated-image>`) |
-| :---: | :---: |
-| <img src="./assets/images/annie.webp" alt="Original image without grain effect" width="450" height="310"> | <img src="./assets/images/annie-pixlated.webp" alt="Image with pixlated grain effect applied" width="450" height="310"> |
-<!-- markdownlint-enable MD033 -->
-
 ### Image Grain Effect
 
 Add noise texture to images:
@@ -81,8 +84,7 @@ Add noise texture to images:
   width="400"
   height="400"
   alt="Photo with grain effect"
->
-</pixlated-image>
+/>
 ```
 
 **Attributes:**
@@ -138,10 +140,5 @@ Contributions are welcome! Please read [CONTRIBUTING.md](CONTRIBUTING.md) for gu
 ## License
 
 License under [Apache-2.0](LICENSE)
-
-## Links
-
-- [Issues](https://github.com/Bridgetamana/pixlated/issues)
-- [NPM Package](https://www.npmjs.com/package/pixlated)
 
 Give the repo a star if you haven't already
