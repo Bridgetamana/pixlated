@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#fafafa">
+    <meta name="theme-color" content="#fafafa" />
     <meta
       name="description"
       content="Lightweight web components that add film grain and noise textures to images and backgrounds using Canvas API."
@@ -15,7 +15,10 @@
       property="og:description"
       content="Lightweight web components that add film grain and noise textures to images and backgrounds using Canvas API."
     />
-    <meta name="google-site-verification" content="cfvL-0xC7qR3mmP5BMpt_YNuzLO7unkIUFFMoHl734M" />
+    <meta
+      name="google-site-verification"
+      content="cfvL-0xC7qR3mmP5BMpt_YNuzLO7unkIUFFMoHl734M"
+    />
     <meta
       property="og:url"
       content="https://bridgetamana.github.io/pixlated/"
@@ -57,6 +60,7 @@
           href="https://github.com/Bridgetamana/pixlated"
           class="github-link"
           target="_blank"
+          rel="noopener"
         >
           <svg
             width="15"
@@ -135,14 +139,13 @@
         </div>
         <div class="description-container">
           <p class="tagline">
-            Lightweight web components that add film grain and noise textures to
-            images and backgrounds using Canvas API
+            Lightweight web components that add noise textures to images and
+            backgrounds using Canvas API
           </p>
           <div class="badges">
             <span class="badge">Web Components</span>
             <span class="badge">Canvas API</span>
             <span class="badge">Zero Dependencies</span>
-            <span class="badge">Accessible</span>
             <span class="badge">Open Source</span>
           </div>
         </div>
@@ -151,15 +154,13 @@
     <main class="container">
       <div class="playground card-base">
         <h2>pixlated-image</h2>
-        <p class="playground-description">
-          Add film grain and noise texture to images
-        </p>
+        <p class="playground-description">Add noise texture to images</p>
         <div class="demo-controls">
           <div class="image-display">
             <pixlated-image
               id="demoImage"
               src="./assets/images/annie.webp"
-              intensity="0.3"
+              intensity="0.5"
               width="400"
               height="400"
               alt="Demo image with adjustable grain effect"
@@ -174,9 +175,9 @@
               min="0"
               max="1"
               step="0.05"
-              value="0.3"
+              value="0.5"
             />
-            <span class="value-display" id="intensityValue">0.3</span>
+            <span class="value-display" id="intensityValue">0.5</span>
           </div>
           <div class="code-example">
             <button
@@ -189,12 +190,11 @@
             </button>
             <pre><code id="pixlated-image">&lt;pixlated-image
   src="photo.jpg"
-  intensity="0.3"
+  intensity="0.5"
   width="400"
   height="400"
-  alt="Description"
-&gt;
-&lt;/pixlated-image&gt;</code></pre>
+  alt="Alt Description"
+/&gt;</code></pre>
           </div>
         </div>
       </div>
@@ -209,28 +209,27 @@
             <pixlated-bg
               id="demoBg"
               class="demo-bg"
-              intensity="0.15"
+              intensity="0.2"
               color="#09090b"
             >
-              <h3 class="demo-bg-title">Noisy Background</h3>
+              <h3 class="demo-bg-title">Background</h3>
               <p class="demo-bg-text">
-                This is a grainy background effect perfect for hero sections,
-                cards, or any element that needs texture. Adjust the intensity
-                below to see the effect.
+                This is a grainy background effect perfect for hero sections and
+                or any element that needs texture.
               </p>
             </pixlated-bg>
           </div>
           <div class="control-group">
-            <label for="bgIntensitySlider"> BG Intensity </label>
+            <label for="bgIntensitySlider"> Intensity </label>
             <input
               type="range"
               id="bgIntensitySlider"
               min="0"
               max="1"
               step="0.05"
-              value="0.15"
+              value="0.2"
             />
-            <span class="value-display" id="bgIntensityValue">0.15</span>
+            <span class="value-display" id="bgIntensityValue">0.2</span>
           </div>
           <div class="code-example">
             <button
@@ -242,76 +241,81 @@
               Copy
             </button>
             <pre><code id="pixlated-bg">&lt;pixlated-bg
-  intensity="0.15"
+  intensity="0.2"
   color="#09090b"
 &gt;
-  &lt;h1&gt;Your content here&lt;/h1&gt;
-  &lt;p&gt;Perfect for hero sections&lt;/p&gt;
+  &lt;h1&gt;Noisy Background&lt;/h1&gt;
+  &lt;p&gt;This is a grainy background effect perfect for hero sections and or any element that needs texture.&lt;/p&gt;
 &lt;/pixlated-bg&gt;</code></pre>
           </div>
         </div>
       </div>
 
-      <div class="examples">
-        <div class="example-card card-base">
-          <h3>Subtle Grain</h3>
-          <p>
-            Perfect for modern, clean designs. Adds texture without
-            overwhelming.
-          </p>
-          <pixlated-image
-            src="./assets/images/moutains.webp"
-            intensity="0.1"
-            width="300"
-            height="300"
-            alt="Subtle grain example"
-          >
-          </pixlated-image>
-        </div>
+      <div class="examples-wrapper">
+        <h2>More Examples</h2>
+        <div class="examples">
+          <div class="example-card card-base">
+            <h3>Subtle Grain</h3>
+            <pixlated-image
+              src="./assets/images/moutains.webp"
+              intensity="0.1"
+              width="300"
+              height="300"
+              alt="Subtle grain example"
+            />
+          </div>
 
-        <div class="example-card card-base">
-          <h3>Film Look</h3>
-          <p>Classic analog film aesthetic with balanced grain.</p>
-          <pixlated-image
-            src="./assets/images/bus.webp"
-            intensity="0.4"
-            width="300"
-            height="300"
-            alt="Film grain example"
-          >
-          </pixlated-image>
-        </div>
+          <div class="example-card card-base">
+            <h3>Film Look</h3>
+            <pixlated-image
+              src="./assets/images/bus.webp"
+              intensity="0.4"
+              width="300"
+              height="300"
+              alt="Film grain example"
+            />
+          </div>
 
-        <div class="example-card card-base">
-          <h3>Heavy Texture</h3>
-          <p>Bold, artistic grain for dramatic effects.</p>
-          <pixlated-image
-            src="./assets/images/couples-kissing.webp"
-            intensity="0.7"
-            width="300"
-            height="300"
-            alt="Heavy grain example"
-          >
-          </pixlated-image>
+          <div class="example-card card-base">
+            <h3>Heavy Texture</h3>
+            <pixlated-image
+              src="./assets/images/couples-kissing.webp"
+              intensity="0.8"
+              width="300"
+              height="300"
+              alt="Heavy grain example"
+            />
+          </div>
         </div>
       </div>
 
       <footer class="footer">
-  <p>
-    <a href="https://github.com/Bridgetamana/pixlated" target="_blank" rel="noopener noreferrer">
-      View on GitHub
-    </a>
-    ·
-    <a href="https://github.com/Bridgetamana/pixlated/issues" target="_blank" rel="noopener noreferrer">
-      Report an Issue
-    </a>
-    ·
-    <a href="https://www.npmjs.com/package/pixlated" target="_blank" rel="noopener noreferrer">
-      NPM Package
-    </a>
-  </p>
-</footer>
-
+        <p>
+          <a
+            href="https://github.com/Bridgetamana/pixlated"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            View on GitHub
+          </a>
+          ·
+          <a
+            href="https://github.com/Bridgetamana/pixlated/issues"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Report an Issue
+          </a>
+          ·
+          <a
+            href="https://www.npmjs.com/package/pixlated"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            NPM Package
+          </a>
+        </p>
+      </footer>
     </main>
 
     <script src="./src/pixlated.js"></script>

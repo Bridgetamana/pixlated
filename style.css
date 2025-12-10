@@ -73,86 +73,91 @@
   button {
     font: inherit;
   }
+
+  img {
+    max-width: 100%;
+    display: block;
+  }
 }
 
 @layer components {
-  .top-header {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: var(--spacing-sm);
-    background: linear-gradient(
-      to right,
-      #1565c0,
-      #e00d0d,
-      #e0730c,
-      #e00d0d,
-      #1565c0
-    );
-  }
+  header {
+    margin-bottom: var(--spacing-lg);
 
-  .top-header a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: var(--spacing-xs);
-    border-bottom: 1px solid #ededed;
-    color: #ededee;
-    font-size: var(--text-xs);
-  }
+    .top-header {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: var(--spacing-sm);
+      background: linear-gradient(
+        to right,
+        #1565c0,
+        #e00d0d,
+        #e0730c,
+        #e00d0d,
+        #1565c0
+      );
 
-  .top-header a:hover {
-    opacity: 0.8;
-  }
+      a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: var(--spacing-xs);
+        border-bottom: 1px solid #ededed;
+        color: #ededee;
+        font-size: var(--text-xs);
+      }
 
-  .bottom-header {
-    padding-inline: var(--spacing-md);
-    max-width: 1200px;
-    margin: 0 auto;
-    position: relative;
-  }
+      a:hover {
+        opacity: 0.8;
+      }
+    }
 
-  .page-title {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-block: var(--spacing-md);
+    .bottom-header {
+      padding-inline: var(--spacing-md);
+      max-width: 1200px;
+      margin: 0 auto;
+      position: relative;
+
+      .page-title {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-block: var(--spacing-md);
+
+        h1 {
+          font-size: clamp(var(--text-3xl), 4vw, var(--text-4xl));
+          font-weight: 700;
+        }
+      }
+    }
+
+    .tagline {
+      color: var(--foreground-muted);
+      margin-bottom: var(--spacing-xs);
+      max-width: 34rem;
+    }
+
+    .badges {
+      display: flex;
+      gap: var(--spacing-xs);
+      flex-wrap: wrap;
+    }
+
+    .badge {
+      background: var(--card-color);
+      border: 1px solid var(--border-color);
+      padding: 0.125rem 0.5rem;
+      border-radius: var(--radius-lg);
+      font-size: var(--text-xs);
+      color: var(--foreground-muted);
+    }
   }
 
   .container {
     max-width: 1200px;
     margin: 0 auto;
     padding-inline: var(--spacing-md);
-  }
-
-  header {
-    margin-bottom: var(--spacing-lg);
-  }
-
-  h1 {
-    font-size: clamp(var(--text-3xl), 4vw, var(--text-4xl));
-    font-weight: 700;
-  }
-
-  .tagline {
-    color: var(--foreground-muted);
-    margin-bottom: var(--spacing-xs);
-    max-width: 34rem;
-  }
-
-  .badges {
-    display: flex;
-    gap: var(--spacing-xs);
-    flex-wrap: wrap;
-  }
-
-  .badge {
-    background: var(--card-color);
-    border: 1px solid var(--border-color);
-    padding: 0.125rem 0.5rem;
-    border-radius: var(--radius-lg);
-    font-size: var(--text-xs);
-    color: var(--foreground-muted);
   }
 
   .card-base {
@@ -166,166 +171,192 @@
     margin-bottom: var(--spacing-xl);
     max-width: 900px;
     margin-inline: auto;
-  }
 
-  .playground h2 {
-    font-size: var(--text-lg);
-    font-weight: 600;
-    margin-bottom: var(--spacing-xs);
-    color: var(--foreground);
-  }
+    h2 {
+      font-size: var(--text-lg);
+      font-weight: 600;
+      margin-bottom: var(--spacing-xs);
+      color: var(--foreground);
+    }
 
-  .playground-description {
-    color: var(--foreground-muted);
-    font-size: 0.875rem;
-    margin-bottom: var(--spacing-lg);
+    .playground-description {
+      color: var(--foreground-muted);
+      font-size: 0.875rem;
+      margin-bottom: var(--spacing-lg);
+    }
   }
 
   .demo-controls {
     display: flex;
     flex-direction: column;
     gap: var(--spacing-md);
+
+    .image-display {
+      text-align: center;
+      margin-top: var(--spacing-lg);
+
+      pixlated-image {
+        border-radius: var(--radius-md);
+        overflow: hidden;
+      }
+    }
+
+    .bg-display {
+      margin-top: var(--spacing-lg);
+
+      .demo-bg {
+        width: 100%;
+        border-radius: var(--radius-md);
+        padding: var(--spacing-lg);
+        color: #ededee;
+
+        .demo-bg-title {
+          margin-bottom: var(--spacing-sm);
+          font-size: var(--text-xl);
+          font-weight: 600;
+        }
+
+        .demo-bg-text {
+          max-width: 500px;
+        }
+      }
+    }
+
+    .control-group {
+      margin-block: var(--spacing-sm);
+      position: relative;
+      width: 100%;
+      max-width: 400px;
+      margin-inline: auto;
+
+      label {
+        display: block;
+        color: var(--foreground-muted);
+        font-size: var(--text-sm);
+        position: absolute;
+        left: 12px;
+        top: 7px;
+        cursor: pointer;
+      }
+
+      input[type="range"] {
+        width: 100%;
+        height: 36px;
+        border-radius: var(--radius-sm);
+        background-color: var(--background);
+        border: 1px solid var(--border-color);
+        outline: none;
+        -webkit-appearance: none;
+        appearance: none;
+        cursor: pointer;
+      }
+
+      input[type="range"]:focus-visible {
+        outline: 2px solid var(--foreground);
+        outline-offset: 2px;
+      }
+
+      input[type="range"]::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        appearance: none;
+        width: 6px;
+        height: 24px;
+        border-radius: 3px;
+        background: var(--foreground);
+        cursor: grab;
+      }
+
+      input[type="range"]::-moz-range-thumb {
+        appearance: none;
+        width: 6px;
+        height: 24px;
+        border-radius: 3px;
+        background: var(--foreground);
+        cursor: grab;
+        border: none;
+      }
+
+      .value-display {
+        color: var(--foreground-muted);
+        font-weight: 600;
+        font-size: var(--text-sm);
+        position: absolute;
+        right: 12px;
+        top: 7px;
+        pointer-events: none;
+      }
+    }
+
+    .code-example {
+      width: 100%;
+      position: relative;
+
+      button.copy {
+        background: var(--card-color);
+        color: var(--foreground-muted);
+        border: 1px solid var(--border-color);
+        border-radius: var(--radius-sm);
+        position: absolute;
+        right: 5px;
+        top: 5px;
+        cursor: pointer;
+        padding: 4px 5px;
+        font-size: var(--text-xs);
+      }
+
+      pre {
+        background: var(--background);
+        border: 1px solid var(--border-color);
+        border-radius: var(--radius-sm);
+        padding: var(--spacing-sm);
+        overflow-x: auto;
+        margin: 0;
+      }
+
+      code {
+        font-family: "Noto Sans Mono", monospace;
+        font-size: 0.8125rem;
+        line-height: 1.6;
+        color: var(--foreground);
+        display: block;
+      }
+    }
   }
 
-  .code-example {
-    width: 100%;
-    position: relative;
-  }
+  .examples-wrapper {
+    h2 {
+      font-size: var(--text-lg);
+      font-weight: 600;
+      margin-bottom: var(--spacing-xs);
+      color: var(--foreground);
+    }
 
-  .code-example button.copy {
-    background: var(--card-color);
-    color: var(--foreground-muted);
-    border: 1px solid var(--border-color);
-    border-radius: var(--radius-sm);
-    position: absolute;
-    right: 5px;
-    top: 5px;
-    cursor: pointer;
-    padding: 4px 5px;
-    font-size: var(--text-xs);
-  }
+    .examples {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: var(--spacing-md);
+      margin-bottom: var(--spacing-xl);
+    }
 
-  .code-example pre {
-    background: var(--background);
-    border: 1px solid var(--border-color);
-    border-radius: var(--radius-sm);
-    padding: var(--spacing-sm);
-    overflow-x: auto;
-    margin: 0;
-  }
+    .example-card {
+      transition: border-color 0.2s ease;
+    }
 
-  .code-example code {
-    font-family: "Noto Sans Mono", monospace;
-    font-size: 0.8125rem;
-    line-height: 1.6;
-    color: var(--foreground);
-    display: block;
-  }
+    .example-card:hover {
+      border-color: var(--foreground-muted);
+    }
 
-  .control-group {
-    margin-block: var(--spacing-sm);
-    position: relative;
-    width: 100%;
-    max-width: 400px;
-    margin-inline: auto;
-  }
+    .example-card h3 {
+      margin-bottom: var(--spacing-sm);
+      color: var(--foreground);
+      font-size: var(--text-base);
+    }
 
-  label {
-    display: block;
-    color: var(--foreground-muted);
-    font-size: var(--text-sm);
-    position: absolute;
-    left: 12px;
-    top: 7px;
-    cursor: pointer;
-  }
-
-  input[type="range"] {
-    width: 100%;
-    height: 36px;
-    border-radius: var(--radius-sm);
-    background-color: var(--background);
-    border: 1px solid var(--border-color);
-    outline: none;
-    -webkit-appearance: none;
-    appearance: none;
-    cursor: pointer;
-  }
-
-  input[type="range"]:focus-visible {
-    outline: 2px solid var(--foreground);
-    outline-offset: 2px;
-  }
-
-  input[type="range"]::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    appearance: none;
-    width: 6px;
-    height: 24px;
-    border-radius: 3px;
-    background: var(--foreground);
-    cursor: grab;
-  }
-
-  input[type="range"]::-moz-range-thumb {
-    appearance: none;
-    width: 6px;
-    height: 24px;
-    border-radius: 3px;
-    background: var(--foreground);
-    cursor: grab;
-    border: none;
-  }
-
-  .value-display {
-    color: var(--foreground-muted);
-    font-weight: 600;
-    font-size: var(--text-sm);
-    position: absolute;
-    right: 12px;
-    top: 7px;
-    pointer-events: none;
-  }
-
-  .image-display {
-    text-align: center;
-    margin-top: var(--spacing-lg);
-  }
-
-  .bg-display {
-    margin-top: var(--spacing-lg);
-  }
-
-  pixlated-image {
-    border-radius: var(--radius-md);
-    overflow: hidden;
-  }
-
-  .examples {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: var(--spacing-md);
-    margin-bottom: var(--spacing-xl);
-  }
-
-  .example-card {
-    transition: border-color 0.2s ease;
-  }
-
-  .example-card:hover {
-    border-color: var(--foreground-muted);
-  }
-
-  .example-card h3 {
-    margin-bottom: var(--spacing-sm);
-    color: var(--foreground);
-    font-size: var(--text-base);
-  }
-
-  .example-card p {
-    color: var(--foreground-muted);
-    margin-bottom: var(--spacing-md);
-    font-size: var(--text-sm);
+    .example-card p {
+      color: var(--foreground-muted);
+      margin-bottom: var(--spacing-md);
+      font-size: var(--text-sm);
+    }
   }
 
   footer {
@@ -336,12 +367,13 @@
     border-top: 1px solid var(--border-color);
     padding-bottom: var(--spacing-lg);
     font-size: var(--text-sm);
-  }
 
-  footer a:hover {
-    color: var(--foreground);
+    a:hover {
+      color: var(--foreground);
+    }
   }
 }
+
 @layer theme {
   .theme-btn {
     position: relative;
@@ -349,7 +381,6 @@
     height: 32px;
   }
 
-  /* Buttons now wrap the SVGs: style the button and svg appropriately */
   .theme-btn .theme-toggle {
     position: absolute;
     top: 0;
@@ -373,7 +404,6 @@
     color: var(--foreground);
   }
 
-  /* Visible/hidden toggle buttons (IDs are now on the buttons) */
   .theme-btn #dark-toggle {
     opacity: 0;
     pointer-events: none;
@@ -389,34 +419,14 @@
     pointer-events: none;
   }
 
-  /* Rotation helper: cover svg.rotate inside button or rotate button itself */
   .theme-btn .theme-toggle svg.rotate,
   .theme-btn .theme-toggle.rotate svg {
     transform: rotate(360deg);
   }
 
-  /* Keyboard focus for accessibility */
   .theme-btn .theme-toggle:focus-visible {
     outline: 2px solid var(--foreground);
     outline-offset: 2px;
-  }
-
-  .demo-bg {
-    width: 100%;
-    min-height: 300px;
-    border-radius: var(--radius-md);
-    padding: var(--spacing-lg);
-    color: #ededee;
-  }
-
-  .demo-bg-title {
-    margin-bottom: var(--spacing-sm);
-    font-size: var(--text-xl);
-    font-weight: 600;
-  }
-
-  .demo-bg-text {
-    max-width: 500px;
   }
 }
 
@@ -439,10 +449,9 @@
 
   .demo-controls {
     gap: var(--spacing-sm);
-  }
 
-  .code-example pre {
-    font-size: var(--text-xs);
+    .code-example pre {
+      font-size: var(--text-xs);
+    }
   }
 }
-
