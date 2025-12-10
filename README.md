@@ -66,13 +66,6 @@ import 'pixlated';
 // Now you can use <pixlated-image> in your HTML
 ```
 
-### Plain HTML (No Bundler)
-
-```html
-
-<script src="./node_modules/pixlated/src/pixlated.js"></script>
-```
-
 ### Image Grain Effect
 
 Add noise texture to images:
@@ -112,10 +105,10 @@ Add noise texture to backgrounds:
 
 | Attribute | Default | Description |
 |-----------|---------|-------------|
-| `intensity` | 0.1 | Noise intensity from 0 to 1
-| `color` | #09090b | Background color
+| `intensity` | 0.1 | Noise intensity from 0 to 1 |
+| `color` | #09090b | Background color |
 | `width` | auto-sizes | Fixed width in pixels |
-| `height` | auto-sizes | Fixed height in pixels 
+| `height` | auto-sizes | Fixed height in pixels |
 
 ### Styling
 
