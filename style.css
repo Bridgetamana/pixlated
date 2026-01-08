@@ -40,6 +40,7 @@
     --text-4xl: 2.125rem;
   }
 
+  :root.dark,
   .dark {
     --background: #0a0a0a;
     --foreground: #ededed;
@@ -331,7 +332,7 @@
 
         .tag-highlight {
           color: var(--tag-highlight);
-        } 
+        }
 
         .attribute-highlight {
           color: var(--attribute-highlight);
@@ -422,11 +423,13 @@
     pointer-events: none;
   }
 
+  :root.dark .theme-btn #dark-toggle,
   body.dark .theme-btn #dark-toggle {
     opacity: 1;
     pointer-events: auto;
   }
 
+  :root.dark .theme-btn #light-toggle,
   body.dark .theme-btn #light-toggle {
     opacity: 0;
     pointer-events: none;

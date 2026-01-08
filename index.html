@@ -46,6 +46,11 @@
     <meta name="twitter:image:width" content="1200" />
     <meta name="twitter:image:height" content="700" />
     <title>pixlated - Film Grain & Noise Texture Web Components</title>
+    <script>
+      if (localStorage.getItem("theme") === "dark") {
+        document.documentElement.classList.add("dark");
+      }
+    </script>
     <link href="style.css" rel="stylesheet" />
     <link
       rel="shortcut icon"
@@ -334,7 +339,7 @@
       const loadTheme = () => {
         const savedTheme = localStorage.getItem("theme");
         if (savedTheme === "dark") {
-          document.body.classList.add("dark");
+          document.documentElement.classList.add("dark");
         }
       };
 
@@ -357,12 +362,12 @@
       });
 
       darkToggle.addEventListener("click", () => {
-        document.body.classList.remove("dark");
+        document.documentElement.classList.remove("dark");
         saveTheme(false);
       });
 
       lightToggle.addEventListener("click", () => {
-        document.body.classList.add("dark");
+        document.documentElement.classList.add("dark");
         saveTheme(true);
       });
 
