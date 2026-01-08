@@ -1,9 +1,13 @@
 # pixlated
 
+<div align="center">
+
 [![NPM Version](https://img.shields.io/npm/v/pixlated?style=flat)](https://www.npmjs.com/package/pixlated)
 [![Contributors](https://img.shields.io/github/contributors/Bridgetamana/pixlated.svg?style=flat)](https://github.com/Bridgetamana/pixlated/graphs/contributors)
-[![NPM Downloads](https://img.shields.io/npm/dw/pixlated?style=flat)]((https://www.npmjs.com/package/pixlated))
+[![NPM Downloads](https://img.shields.io/npm/dw/pixlated?style=flat)](https://www.npmjs.com/package/pixlated)
 [![Repo Stars](https://img.shields.io/github/stars/Bridgetamana/pixlated?style=flat)](https://github.com/Bridgetamana/pixlated/stargazers)
+
+</div>
 
 A lightweight web components that add noise textures to images and backgrounds using Canvas API.
 [View Live Demo](https://bridgetamana.github.io/pixlated/)

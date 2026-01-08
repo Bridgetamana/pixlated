@@ -28,7 +28,7 @@ function clampImageIntensity(value, defaultValue) {
 }
 
 class PixlatedImage extends HTMLElement {
-    static DEBUG = false; // Set to true for verbose logging
+    static DEBUG = false; 
 
     constructor() {
         super();
