@@ -358,6 +358,11 @@
 
     .example-card {
       transition: border-color 0.2s ease;
+      text-align: center;
+    }
+
+    .example-card pixlated-image {
+      margin-inline: auto;
     }
 
     .example-card h3 {
