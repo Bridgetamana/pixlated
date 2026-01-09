@@ -9,7 +9,8 @@
 
 </div>
 
-A lightweight web components that add noise textures to images and backgrounds using Canvas API.
+Lightweight web components that add noise textures to images and backgrounds using Canvas API.
+
 [View Live Demo](https://bridgetamana.github.io/pixlated/)
 
 [NPM Package](https://www.npmjs.com/package/pixlated)
@@ -66,8 +67,11 @@ Or load individually:
 ### With Bundlers (Vite, Webpack, etc)
 
 ```javascript
+// Import the image component
 import 'pixlated';
-// Now you can use <pixlated-image> in your HTML
+
+// Import the background component
+import 'pixlated/bg';
 ```
 
 ### Image Grain Effect
