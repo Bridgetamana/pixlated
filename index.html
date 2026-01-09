@@ -47,7 +47,12 @@
     <meta name="twitter:image:height" content="700" />
     <title>pixlated - Film Grain & Noise Texture Web Components</title>
     <script>
-      if (localStorage.getItem("theme") === "dark") {
+      const savedTheme = localStorage.getItem("theme");
+      if (
+        savedTheme === "dark" ||
+        (!savedTheme &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches)
+      ) {
         document.documentElement.classList.add("dark");
       }
     </script>

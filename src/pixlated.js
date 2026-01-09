@@ -28,7 +28,7 @@ function clampImageIntensity(value, defaultValue) {
 }
 
 class PixlatedImage extends HTMLElement {
-    static DEBUG = false; 
+    static DEBUG = false;
 
     constructor() {
         super();
@@ -84,6 +84,7 @@ class PixlatedImage extends HTMLElement {
                 const dpr = window.devicePixelRatio || 1;
                 this.canvas.width = width * dpr;
                 this.canvas.style.width = `${width}px`;
+                this.ctx.setTransform(1, 0, 0, 1, 0, 0);
                 this.ctx.scale(dpr, dpr);
                 if (this.isConnected) this.drawGrainyImage();
                 break;
@@ -92,6 +93,7 @@ class PixlatedImage extends HTMLElement {
                 const dprH = window.devicePixelRatio || 1;
                 this.canvas.height = height * dprH;
                 this.canvas.style.height = `${height}px`;
+                this.ctx.setTransform(1, 0, 0, 1, 0, 0);
                 this.ctx.scale(dprH, dprH);
                 if (this.isConnected) this.drawGrainyImage();
                 break;

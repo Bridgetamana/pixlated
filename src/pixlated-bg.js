@@ -111,6 +111,8 @@ class PixlatedBg extends HTMLElement {
         const width = this.getAttribute('width');
         const height = this.getAttribute('height');
 
+        this.ctx.setTransform(1, 0, 0, 1, 0, 0);
+
         if (width && height) {
             const w = parseInt(width, 10);
             const h = parseInt(height, 10);
