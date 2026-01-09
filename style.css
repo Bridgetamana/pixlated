@@ -216,7 +216,8 @@
       margin-top: var(--spacing-md);
 
       .demo-bg {
-        width: 100%;
+        max-width: 400px;
+        margin-inline: auto;
         border-radius: var(--radius-md);
         padding: var(--spacing-lg);
         color: #ededee;
