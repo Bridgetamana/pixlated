@@ -71,7 +71,7 @@
   }
 
   body {
-    font-family: "Noto Sans Mono", monospace;
+    font-family: "NotoSansMono", monospace;
     padding: 0;
     margin: 0;
     background-color: var(--background);
@@ -450,30 +450,30 @@
     outline: 2px solid var(--foreground);
     outline-offset: 2px;
   }
-}
 
-@media (max-width: 768px) {
-  .examples {
-    grid-template-columns: 1fr;
-  }
+  @media (max-width: 768px) {
+    .examples {
+      grid-template-columns: 1fr;
+    }
 
-  .page-title h1 {
-    font-size: var(--text-2xl);
-  }
+    .page-title h1 {
+      font-size: var(--text-2xl);
+    }
 
-  .container {
-    padding-inline: var(--spacing-sm);
-  }
+    .container {
+      padding-inline: var(--spacing-sm);
+    }
 
-  .playground {
-    padding: var(--spacing-md);
-  }
+    .playground {
+      padding: var(--spacing-md);
+    }
 
-  .demo-controls {
-    gap: var(--spacing-sm);
+    .demo-controls {
+      gap: var(--spacing-sm);
 
-    .code-example pre {
-      font-size: var(--text-xs);
+      .code-example pre {
+        font-size: var(--text-xs);
+      }
     }
   }
 }
