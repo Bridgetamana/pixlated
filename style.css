@@ -1,4 +1,4 @@
-@layer base, reset, components, themes;
+@layer base, reset, components, theme;
 
 @font-face {
   font-family: "NotoSansMono";

@@ -159,7 +159,7 @@ class PixlatedBg extends HTMLElement {
         const rawIntensity = parseFloat(this.getAttribute('intensity'));
         return {
             color: this.getAttribute('color') || '#09090b',
-            intensity: clampIntensity(rawIntensity, 0.1),
+            intensity: clampBgIntensity(rawIntensity, 0.1),
             width: this.canvas.width,
             height: this.canvas.height
         };
