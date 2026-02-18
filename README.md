@@ -11,7 +11,7 @@
 
 Lightweight web components that add noise textures to images and backgrounds using Canvas API.
 
-[View Live Demo](https://bridgetamana.github.io/pixlated/)
+[View Live Demo](https://pixlated.vercel.app/)
 
 [NPM Package](https://www.npmjs.com/package/pixlated)
 
