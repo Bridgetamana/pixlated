@@ -315,6 +315,30 @@
         padding: 4px 5px;
         font-size: var(--text-xs);
       }
+
+      pre {
+        background: var(--background);
+        border: 1px solid var(--border-color);
+        border-radius: var(--radius-sm);
+        padding: var(--spacing-sm);
+        overflow-x: auto;
+      }
+
+      code {
+        font-family: "Noto Sans Mono", monospace;
+        font-size: 0.8125rem;
+        line-height: 1.6;
+        color: var(--foreground);
+        display: block;
+
+        .tag-highlight {
+          color: var(--tag-highlight);
+        }
+
+        .attribute-highlight {
+          color: var(--attribute-highlight);
+        }
+      }
     }
 
     .action-buttons {
@@ -347,31 +371,6 @@
     .action-btn:focus-visible {
       outline: 2px solid var(--foreground);
       outline-offset: 2px;
-    }
-
-      pre {
-        background: var(--background);
-        border: 1px solid var(--border-color);
-        border-radius: var(--radius-sm);
-        padding: var(--spacing-sm);
-        overflow-x: auto;
-      }
-
-      code {
-        font-family: "Noto Sans Mono", monospace;
-        font-size: 0.8125rem;
-        line-height: 1.6;
-        color: var(--foreground);
-        display: block;
-
-        .tag-highlight {
-          color: var(--tag-highlight);
-        }
-
-        .attribute-highlight {
-          color: var(--attribute-highlight);
-        }
-      }
     }
   }
 
