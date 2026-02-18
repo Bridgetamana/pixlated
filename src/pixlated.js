@@ -47,14 +47,38 @@ class PixlatedImage extends HTMLElement {
         :host {
             display: inline-block;
             line-height: 0;
+            position: relative;
         }
         canvas {
             max-width: 100%;
             height: auto;
             display: block;
         }
+        .skeleton {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, #e0e0e0 25%, #f0f0f0 50%, #e0e0e0 75%);
+            background-size: 200% 100%;
+            animation: shimmer 1.5s infinite;
+            border-radius: inherit;
+            z-index: 1;
+        }
+        .skeleton.hidden {
+            display: none;
+        }
+        @keyframes shimmer {
+            0% { background-position: 200% 0; }
+            100% { background-position: -200% 0; }
+        }
         `;
-        this.shadowRoot.append(this.styleEl, this.canvas);
+
+        this.skeleton = document.createElement('div');
+        this.skeleton.className = 'skeleton';
+
+        this.shadowRoot.append(this.styleEl, this.skeleton, this.canvas);
 
         this.img = new Image();
         this.img.crossOrigin = 'anonymous';
@@ -74,6 +98,7 @@ class PixlatedImage extends HTMLElement {
         switch (name) {
             case 'src':
                 this.errorMessage = '';
+                this._showSkeleton();
                 this.img.src = newValue;
                 break;
             case 'intensity':
@@ -120,6 +145,7 @@ class PixlatedImage extends HTMLElement {
 
         const src = this.getAttribute('src');
         if (src) {
+            this._showSkeleton();
             this.img.src = src;
         } else {
             this.errorMessage = 'Missing src attribute';
@@ -193,6 +219,7 @@ class PixlatedImage extends HTMLElement {
 
     _handleImageLoad() {
         this.errorMessage = '';
+        this._hideSkeleton();
         this.drawGrainyImage();
         this.dispatchEvent(new CustomEvent('pixlated:loaded', {
             detail: {
@@ -207,6 +234,7 @@ class PixlatedImage extends HTMLElement {
 
     _handleImageError(error) {
         this.errorMessage = 'Failed to load image';
+        this._hideSkeleton();
         this.drawPlaceholder();
         this.dispatchEvent(new CustomEvent('pixlated:error', {
             detail: {
@@ -245,6 +273,18 @@ class PixlatedImage extends HTMLElement {
             case 'debug':
                 console.log(`${prefix} [DEBUG] ${message}`);
                 break;
+        }
+    }
+
+    _showSkeleton() {
+        if (this.skeleton) {
+            this.skeleton.classList.remove('hidden');
+        }
+    }
+
+    _hideSkeleton() {
+        if (this.skeleton) {
+            this.skeleton.classList.add('hidden');
         }
     }
 
