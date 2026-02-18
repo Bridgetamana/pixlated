@@ -450,7 +450,23 @@
 
         const reader = new FileReader();
         reader.onload = (event) => {
-          demoImage.setAttribute("src", event.target.result);
+          const img = new Image();
+          img.onload = () => {
+            const maxSize = 600;
+            let width = img.naturalWidth;
+            let height = img.naturalHeight;
+
+            if (width > maxSize || height > maxSize) {
+              const ratio = Math.min(maxSize / width, maxSize / height);
+              width = Math.round(width * ratio);
+              height = Math.round(height * ratio);
+            }
+
+            demoImage.setAttribute("width", width);
+            demoImage.setAttribute("height", height);
+            demoImage.setAttribute("src", event.target.result);
+          };
+          img.src = event.target.result;
         };
         reader.readAsDataURL(file);
       });
