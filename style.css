@@ -315,6 +315,39 @@
         padding: 4px 5px;
         font-size: var(--text-xs);
       }
+    }
+
+    .action-buttons {
+      display: flex;
+      justify-content: center;
+      gap: var(--spacing-sm);
+      flex-wrap: wrap;
+    }
+
+    .action-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: var(--spacing-xs);
+      background: var(--foreground);
+      color: var(--background);
+      border: none;
+      border-radius: var(--radius-sm);
+      padding: 0.625rem 1.25rem;
+      font-size: var(--text-sm);
+      font-weight: 500;
+      cursor: pointer;
+      transition: opacity 0.2s ease;
+    }
+
+    .action-btn:hover {
+      opacity: 0.85;
+    }
+
+    .action-btn:focus-visible {
+      outline: 2px solid var(--foreground);
+      outline-offset: 2px;
+    }
 
       pre {
         background: var(--background);
