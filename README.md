@@ -19,11 +19,9 @@ Lightweight web components that add noise textures to images and backgrounds usi
 
 See the subtle noise effect `pixlated` adds to an image.
 
-Before (Original)
-![Original image without grain effect](./assets/images/annie.webp)
-
-After (With `<pixlated-image>`)
-![Image with pixlated grain effect applied](./assets/images/annie-pixlated.webp)
+| Before (Original) | After (With `<pixlated-image>`) |
+|:-----------------:|:-------------------------------:|
+| ![Original image without grain effect](./assets/images/annie.webp) | ![Image with pixlated grain effect applied](./assets/images/annie-pixlated.webp) |
 
 ## Features
 
